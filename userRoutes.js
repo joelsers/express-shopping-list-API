@@ -1,5 +1,5 @@
 const express = require('express')
-const router = new express.Router()
+const router = express.Router()
 
 class Item {
     constructor(name, price) {
@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const newItem = new Item(req.body.name, req.body.price)
     console.log(newItem)
+    console.log(res.body)
     return res.json({ added: newItem })
 })
 
